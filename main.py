@@ -61,6 +61,8 @@ for i in range(10,30):#起始VlanId跟IP段
         files.write("quit" + '\n')
 
         files.write("vlan " + str(i) + '\n')#进入vlan
+        
+        #files.write("qos vlan-policy vlan" + str(i) + " vlan " + str(i) + " inbound ")#h3c无需进入vlan进行绑定，注释掉63行和67行
 
         files.write("traffic-policy vlan" + str(i) + " inbound " + '\n')#跟vlan绑定acl（也可以在端口绑定acl行为）
 
